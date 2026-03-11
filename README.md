@@ -10,7 +10,6 @@ HTTP 요청, HTML 파싱, 레이아웃, 렌더링까지 브라우저의 핵심 �
 
 - Python 3.12+
 - pip
-- pytest
 
 ### 설치
 
@@ -47,10 +46,10 @@ python src/browser.py view-source:http://example.org/
 pytest
 
 # 특정 챕터
-pytest tests/test_ch01.py -v
+pytest tests/ch01/ -v
 
 # 특정 연습문제
-pytest tests/test_ch01.py::test_entities -v
+pytest tests/ch01/test_ex04.py -v
 ```
 
 ## 프로젝트 구조
@@ -64,7 +63,13 @@ browser-engine/
 │   └── browser.py         # 메인 브라우저 코드
 ├── tests/
 │   ├── conftest.py        # 공통 fixture
-│   └── test_ch01.py       # 챕터별 테스트
+│   ├── ch01/
+│   │   ├── __init__.py
+│   │   ├── test_base.py   # 본문 코드 테스트
+│   │   ├── test_ex01.py   # 연습문제 1-1
+│   │   └── ...
+│   └── ch02/
+│       └── ...
 └── fixtures/              # 테스트용 정적 파일
 ```
 
