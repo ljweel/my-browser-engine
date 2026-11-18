@@ -39,17 +39,23 @@ python src/browser.py "data:text/html,Hello world!"
 python src/browser.py view-source:http://example.org/
 ```
 
+`python`이 안될 경우 `python3`등 으로 실행
+
 ### 테스트
 
 ```bash
 # 전체 테스트
-pytest
+pytest -n auto
 
 # 특정 챕터
-pytest tests/ch01/ -v
+pytest -vn auto tests/ch01/
 
 # 특정 연습문제
-pytest tests/ch01/test_ex04.py -v
+pytest -vn auto tests/ch01/test_ex04.py
+
+# cpu 개수만큼 병렬 테스트
+pytest -n auto
+pytest -n 4
 ```
 
 ## 프로젝트 구조
